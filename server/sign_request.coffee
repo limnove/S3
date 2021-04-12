@@ -70,6 +70,8 @@ Meteor.methods
 		# Identify post_url
 		if ops.region is "us-east-1" or ops.region is "us-standard"
 			post_url = "https://s3.amazonaws.com/#{ops.bucket}"
+		else if ops.region is "ams3" or "nyc3"
+			post_url = "https://#{ops.region}.digitaloceanspaces.com/#{ops.bucket}"
 		else
 			post_url = "https://s3-#{ops.region}.amazonaws.com/#{ops.bucket}"
 
@@ -104,5 +106,3 @@ calculate_signature = (policy, region) ->
 
 	HmacSHA256 policy, signature_key
 		.toString Crypto.enc.Hex
-
-

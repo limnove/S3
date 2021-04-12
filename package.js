@@ -1,8 +1,8 @@
 Package.describe({
-	name:"lepozepo:s3",
+	name:"lim9:s3",
 	summary: "Upload files to S3. Allows use of Knox Server-Side.",
 	version:"5.2.8",
-	git:"https://github.com/Lepozepo/S3"
+	git:"https://github.com/limnove/S3"
 });
 
 Npm.depends({
